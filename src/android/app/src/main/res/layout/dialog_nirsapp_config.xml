@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tv_httptype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_type_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Spinner
+        android:id="@+id/sp_httptype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_httptype"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_address_title"
+        app:layout_constraintTop_toBottomOf="@id/sp_httptype"/>
+    <EditText
+        android:id="@+id/et_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/dialog_address_hint"
+        app:layout_constraintTop_toBottomOf="@id/tv_address"/>
+<!--    <TextView-->
+<!--        android:id="@+id/tv_port"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/dialog_port_title"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/et_address"/>-->
+<!--    <EditText-->
+<!--        android:id="@+id/et_port"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/dialog_port_hint"-->
+<!--        android:inputType="number"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_port"/>-->
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ubi.NanoScan">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
+
+    <application
+        tools:replace="allowBackup"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppCompatStyle">
+        <activity
+            android:name="com.ubi.UbiNIRS.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ubi.UbiNIRS.InfoActivity"
+            android:label="@string/title_activity_info"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+        <activity
+            android:name="com.ubi.UbiNIRS.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatTheme" />
+
+        <service
+            android:name="com.ubi.UbiNIRS.NanoBLEService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name="com.ubi.UbiNIRS.NewScanActivity"
+            android:label="@string/new_scan"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppCompatStyle"/>
+        <activity
+            android:name="com.ubi.UbiNIRS.ConfigureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ubi.UbiNIRS.DeviceInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ubi.UbiNIRS.DeviceStatusActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ubi.UbiNIRS.ScanConfActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ubi.UbiNIRS.StoredScanDataActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name="com.ubi.UbiNIRS.BLEScanActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.ubi.UbiNIRS.ActiveScanActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

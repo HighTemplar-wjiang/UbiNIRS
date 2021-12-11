@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>Training Result</h1>
+    <h3>Accuracy (current --> new):</h3>
+    <p>{{ current_accuracy }} --> {{ new_accuracy }}</p>
+
+    <br /> <br /> <br /> <br />
+
+    <h3>Record this data?</h3>
+    <h1>
+        <a href="feedback?answer=yes&mode=train&label={{ label }}"> &nbsp; Yes &nbsp; </a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="feedback?answer=no&mode=train&label={{ label }}"> &nbsp; No &nbsp; </a>
+    </h1>
+</body>
+</html>

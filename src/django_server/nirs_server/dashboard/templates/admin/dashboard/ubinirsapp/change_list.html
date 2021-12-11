@@ -1,0 +1,75 @@
+{% extends "admin/change_list.html" %}
+{% load static %}
+
+<!-- Override the extrahead to add js. -->
+{% block extrahead %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "dashboard/Chart.min.css" %}"/>
+    <script src="{% static "dashboard/Chart.bundle.min.js" %}"></script>
+    <script src="{% static "dashboard/palette.js" %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('changeListStat').getContext('2d');
+
+            // Sample data
+            const chartData = {{ chart_data | safe }};
+
+            // Parse the dates to JS
+            x_labels = [];
+            chartData.forEach((d) => {
+                x_labels.push(d.app_displayname);
+                d.x = d.app_displayname;
+                d.y = d.app_visits;
+            });
+
+            // Render the chart
+            const chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: x_labels,
+                    datasets: [
+                        {
+                            {#label: "Number of visits",#}
+                            data: chartData,
+                            backgroundColor: palette('mpn65', chartData.length).map(function(hex) {
+                                return '#' + hex + '99';
+                            })
+                        }
+                    ],
+                },
+                options: {
+                    legend: {
+                        display: false,
+                    },
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        yAxes: [
+                            {
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: "Number of visits",
+                                },
+                                ticks: {
+                                    beginAtZero: true,
+                                    callback: function(value) {if (value % 1 === 0) {return value;}}
+                                },
+                            },
+                        ],
+                    },
+                },
+            });
+        });
+    </script>
+{% endblock %}
+<!-- End of extra head -->
+
+{% block content %}
+
+    <!-- Chart container -->
+    <div style="width:80%; height:20%;">
+        <canvas style="margin-bottom:30px; width:60%; height:20%;" id="changeListStat"></canvas>
+    </div>
+
+    {{ block.super }}
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+<!-- Override the extrahead to add js. -->
+{% block extrahead %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "dashboard/Chart.min.css" %}"/>
+    <script src="{% static "dashboard/Chart.bundle.min.js" %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const ctx = document.getElementById('chart').getContext('2d');
+
+            // Sample data
+            const chartData = {{ chart_data | safe }};
+
+            // Parse the dates to JS
+            const wavelength = chartData["wavelength"];
+            const reflectance = chartData["reflectance"];
+            const absorbance = chartData["absorbance"];
+
+            console.log(reflectance);
+
+            // Render the chart
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: wavelength,
+                    datasets: [
+                        {
+                            label: "Reflectance",
+                            data: reflectance,
+                            backgroundColor: 'rgba(220,20,20,0.5)',
+                        },
+                    ],
+                },
+                options: {
+                    maintainAspectRatio: true,
+                    responsive: true,
+                    scales: {
+                        xAxes: [
+                            {
+                                type: "category",
+                            },
+                        ],
+                        yAxes: [
+                            {
+                                ticks: {
+                                    beginAtZero: true,
+                                },
+                            },
+                        ],
+                    },
+                },
+            });
+        });
+    </script>
+{% endblock %}
+<!-- End of extra head -->
+
+{% block content %}
+    {{ block.super }}
+
+    <!-- Chart container -->
+    <div style="width:80%; height:20%;">
+        <canvas style="margin-bottom:30px; width:60%; height:20%;" id="chart"></canvas>
+    </div>
+
+{% endblock %}

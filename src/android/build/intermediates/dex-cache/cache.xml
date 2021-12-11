@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/alarak/.android/build-cache/aaeec0fdcbd854374755bf9b62f7fe9b997fe4a2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="de3935879670881c0bd40cb4c3d5bd3f393290b1">
+        <dex dex="/home/alarak/OShared/projects/NIRS_all/UbiNIRS/src/android/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_290e8c92e4c587054db71d6a73085f6c2e87715c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/alarak/OShared/projects/NIRS_all/UbiNIRS/src/android/MPChartLib/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6a0d5b625c491984050b9b5da0b763802c39776e">
+        <dex dex="/home/alarak/OShared/projects/NIRS_all/UbiNIRS/src/android/app/build/intermediates/transforms/dex/debug/folders/1000/4/classes_2d031b3c2712677ff3829c049fbfee256c1b1ce2/classes.dex" />
+    </item>
+
+</items>
