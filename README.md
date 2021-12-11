@@ -35,7 +35,7 @@ To create new NIRS apps, simply go to the dashboard, then click "ADD UBI NIRS AP
 <img src="res/dashboard.png" width="500px" />
 
 ### Android app side 
-- Compile and install the app through Android Studio, or use the pre-compiled [apk](src/android/app/build/outputs/apk) file.
+- Compile and install the app through Android Studio, or use the pre-compiled [apk](https://github.com/HighTemplar-wjiang/UbiNIRS/releases) file.
 - Click the add button on the bottom-right corner. 
 - Input the URL shown in the server side with NIRS-app name. By default, the URL for the app is the lower-cased and no-white-space app name (e.g., _server_ip_port_/smartpillbox for the "Smart Pillbox" app).
 
