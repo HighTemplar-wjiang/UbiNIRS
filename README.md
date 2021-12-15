@@ -1,5 +1,5 @@
 # UbiNIRS
-A tool kit to quick-start NIRS applications without coding. 
+A tool kit to quick-start NIRS applications without coding.
 
 ## Architecture 
 <img src="res/system_overview.png" width="500px" />
@@ -50,6 +50,7 @@ To create new NIRS apps, simply go to the dashboard, then click "ADD UBI NIRS AP
 #### Deployment
 - For long-term running, please consider a WSGI or an ASGI server [[reference](https://docs.djangoproject.com/en/3.2/howto/deployment/)].
 
-## Related tools 
+## Related resources
+- UbiNIRS Teaser Video: [YouTube](https://youtu.be/OXJjwYzoGuU), [weiweijiang.xyz](http://www.weiweijiang.xyz/res/video/ubinirs_compressed.mp4)
 - [NIRScanner-Python](https://github.com/HighTemplar-wjiang/NIRScanner-Python): A python library for NIRScan Nano. 
 - [NIRScan-Nano-Firmware](https://github.com/HighTemplar-wjiang/NIRScan-Nano-Firmware): A customized firmware for NIRScan Nano to enable Bluetooth after the device is on.
