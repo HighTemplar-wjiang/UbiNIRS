@@ -1,0 +1,10 @@
+{
+  "app_id": 469816416,
+  "app_name": "Finger Test",
+  "app_description": "Test if you have a biological finger!",
+  "app_provider": "Weiwei Jiang",
+  "app_version": "1.0",
+  "app_icon": "",
+  "app_thumbnail": "",
+  "classes": ["finger", "nail"]
+}

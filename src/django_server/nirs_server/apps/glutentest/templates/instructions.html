@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="nirs-can-scan" content="{{ can_scan }}">
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <h4>(Sample {{ sample_id }})</h4>
+    {{ instructions |safe }}
+</body>
+
+</html>
